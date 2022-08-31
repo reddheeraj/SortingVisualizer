@@ -1,4 +1,4 @@
-#Sorting Visualizer
+**Sorting Visualizer**
 
 This project is a visualizer for different types of sorting methods.
 
