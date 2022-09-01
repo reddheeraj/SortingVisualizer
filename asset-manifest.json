@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Sorting-Visualizer/static/css/main.23c605ac.css",
-    "main.js": "/Sorting-Visualizer/static/js/main.e6cb88cf.js",
-    "static/js/787.f5ecc189.chunk.js": "/Sorting-Visualizer/static/js/787.f5ecc189.chunk.js",
-    "index.html": "/Sorting-Visualizer/index.html",
-    "main.23c605ac.css.map": "/Sorting-Visualizer/static/css/main.23c605ac.css.map",
-    "main.e6cb88cf.js.map": "/Sorting-Visualizer/static/js/main.e6cb88cf.js.map",
-    "787.f5ecc189.chunk.js.map": "/Sorting-Visualizer/static/js/787.f5ecc189.chunk.js.map"
+    "main.css": "/SortingVisualizer/static/css/main.23c605ac.css",
+    "main.js": "/SortingVisualizer/static/js/main.d0f92bb6.js",
+    "static/js/787.f5ecc189.chunk.js": "/SortingVisualizer/static/js/787.f5ecc189.chunk.js",
+    "index.html": "/SortingVisualizer/index.html",
+    "main.23c605ac.css.map": "/SortingVisualizer/static/css/main.23c605ac.css.map",
+    "main.d0f92bb6.js.map": "/SortingVisualizer/static/js/main.d0f92bb6.js.map",
+    "787.f5ecc189.chunk.js.map": "/SortingVisualizer/static/js/787.f5ecc189.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.23c605ac.css",
-    "static/js/main.e6cb88cf.js"
+    "static/js/main.d0f92bb6.js"
   ]
 }
