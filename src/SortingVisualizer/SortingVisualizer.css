@@ -1,37 +1,53 @@
+body {
+    background: hotpink;
+}
+
 .array-container {
-    position: absolute;
+    position: relative;
     top: 50px;
     width: 1262px; 
     margin: 1px 1px;
     padding: 10px 1px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.arrays {
+    height: 400px;
+    margin: 2px;
+    width: 92%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .array-bar {
-    position: relative;
     width: 2px;
-    background-color: pink;
+    background-color: #fff;
     display: inline-block;
     position: relative;
     left: 10px;
     margin: 0 1px;
 }
 
-.array-bar:hover {
-    background-color: #da3535;
+.buttons-bar {
+    width: 90%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 40px;
 }
 
-.buttons-bar {
-    position: absolute;
-    width: 1250px;
-    top: 420px;
-    border-radius: 10px;
-    border: 2px solid black;; 
-    margin-top: 0px;
-    margin-bottom: 20px;
-    padding: 8px 4px;
-    background-color: rgb(212, 100, 100);
-    left: 10px;
-    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+.bars {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* .buttons-place {
@@ -57,20 +73,20 @@ button:hover {
 }
 
 .top-bar {
-    position: absolute;
-    top: 480px;
-    left: 10px;
-    height: 40px;
-    width: 1250px;
-    border-radius: 10px;
-    border: 2px solid black;
-    background-color: rgb(212, 100, 100);
+    width: 90%;
+    margin: 5px;
+    height: 50px;
+    top: 470px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: black;
     padding: 8px 4px;
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 40px;
 }
 
 .speed-slider {
-    position: absolute;
     left: 50px;
     top: 5px;
     bottom: 5px;
@@ -78,6 +94,7 @@ button:hover {
     width: 150px;
     background-color: rgb(82, 135, 209);
     border-radius: 10px;
+    margin: 10px;
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -86,11 +103,10 @@ button:hover {
 }
 
 .array-slider {
-    position: absolute;
     left: 250px;
     top: 5px;
     bottom: 5px;
-    margin: 1px 1px;
+    margin: 10px;
     width: 150px;
     background-color: rgb(82, 135, 209);
     border-radius: 10px;
@@ -102,13 +118,12 @@ button:hover {
 }
 
 .display {
-    position: relative;
     background-color: rgb(82, 135, 209);
-    left: 1040px;
-    width: 150px;
-    border-radius: 5px;
-    padding: 1px 1px;
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    padding: 1px 1px;
     margin: 5px 5px;
-    top: -9px;
+    width: 15%;
+    border-radius: 10px;
+    display: inline-flexbox;
+    left: 50%;
 }

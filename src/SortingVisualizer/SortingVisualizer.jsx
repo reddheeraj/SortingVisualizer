@@ -14,8 +14,8 @@ export default class SortingVisualizer extends React.Component {
         this.state = {
             array: [],
             speed: 10,
-            size: 315,
-            width: 2,
+            size: 100,
+            width: 8,
         };
     }
 
@@ -35,7 +35,7 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
             const arrayBars = document.getElementsByClassName('array-bar');
             for(let i = 0; i < this.state.size; i++) {
-                arrayBars[i].style.backgroundColor = 'pink';
+                arrayBars[i].style.backgroundColor = '#fff';
             }
         })
     }
@@ -348,97 +348,100 @@ export default class SortingVisualizer extends React.Component {
         const {array} = this.state;
 
         return (
-            
             <div className="array-container">
-                {array.map((value, idx) => (
-                    <div
-                        className="array-bar"
-                        key={idx}
-                        style={{height: `${value}px`, width: `${this.state.width}px`}}>
-                    </div>
-                ))}
-                <div className="buttons-bar">
-                    <button id='reArr' onClick={() => {
-                        this.resetArray();
-                    }}> Generate New Array </button>
-                    <button id='Merge' onClick={(e) => {
-                        this.disable();
-                        this.mergeSort();
-                        
-                    }}> Merge Sort </button>
-                    <button id='Quick' onClick={(e) => {
-                        this.disable();
-                        this.quickSort()
-                        
-                    }}> Quick Sort </button>
-                    <button id='Bubble' onClick={(e) => {
-                        this.disable();
-                        this.bubbleSort();
-                        
-                    }}> Bubble Sort </button>
-                    <button id='Insertion' onClick={(e) => {
-                        this.disable();
-                        this.insertionSort();
-                        
-                    }}> Insertion Sort </button>
-                    <button id='Selection' onClick={(e) => {
-                        this.disable();
-                        this.selectionSort();
-                        
-                    }}> Selection Sort </button>
-                    {/* <button onClick={() => this.testSortAlgos()}> Test Sort Algorithms </button>  */}
+                <div className='arrays'>
+                    {array.map((value, idx) => (
+                        <div
+                            className="array-bar"
+                            key={idx}
+                            style={{height: `${value}px`, width: `${this.state.width}px`}}>
+                        </div>
+                    ))}
                 </div>
-                <div className='top-bar'>
-                    {this.state.algorithm}
-                    <div className='display'>
-                    <label style={
-                        {
-                            fontFamily: "Arial",
-                            color: "aqua",
-                        }
-                    }>Array Size: </label>
-                    {this.state.size}
-                    <br></br>
-                    <label style={
-                        {
-                            fontFamily: "Arial",
-                            color: "aqua",
-                        }
-                    }>Speed: </label>
-                    {this.state.speed}
+                <div className='bars'>
+                    <div className="buttons-bar">
+                        <button id='reArr' onClick={() => {
+                            this.resetArray();
+                        }}> Generate New Array </button>
+                        <button id='Merge' onClick={(e) => {
+                            this.disable();
+                            this.mergeSort();
+                            
+                        }}> Merge Sort </button>
+                        <button id='Quick' onClick={(e) => {
+                            this.disable();
+                            this.quickSort()
+                            
+                        }}> Quick Sort </button>
+                        <button id='Bubble' onClick={(e) => {
+                            this.disable();
+                            this.bubbleSort();
+                            
+                        }}> Bubble Sort </button>
+                        <button id='Insertion' onClick={(e) => {
+                            this.disable();
+                            this.insertionSort();
+                            
+                        }}> Insertion Sort </button>
+                        <button id='Selection' onClick={(e) => {
+                            this.disable();
+                            this.selectionSort();
+                            
+                        }}> Selection Sort </button>
+                        {/* <button onClick={() => this.testSortAlgos()}> Test Sort Algorithms </button>  */}
                     </div>
-                    
-                    <div className='speed-slider'>
-                        <label style = {
-                            {
-                                        fontSize: '14px', 
-                                        color: "turquoise", 
-                                        fontFamily: "cursive",
-                                        fontWeight: "bold",
-                            }
-                        }> Speed </label>
-                        <input id='Speedbar' type='range' 
-                        min='0.2' 
-                        max='100' 
-                        defaultValue={1}
-                        step={0.1} 
-                        onChange={(e) => this.onSpeed(e)} />
-                    </div>
-                    <div className='array-slider'>
-                        <label style = {
-                            { 
-                                        fontSize: '14px', 
-                                        color: "turquoise", 
-                                        fontFamily: "cursive",
-                                        fontWeight: "bold",
-                            }
-                        }> Array Size </label>
-                        <input id='Sizebar' type='range' 
-                        min='5' 
-                        max='315' 
-                        defaultValue={200}
-                        step={10} 
-                        onChange={(e) => this.onSlider(e)} />
+                    <div className='top-bar'>
+                        {this.state.algorithm}
+                        <div className='display'>
+                            <label style={
+                                {
+                                    fontFamily: "Arial",
+                                    color: "aqua",
+                                }
+                            }><span>Array Size:</span> </label>
+                            {this.state.size}
+                            <br></br>
+                            <label style={
+                                {
+                                    fontFamily: "Arial",
+                                    color: "aqua",
+                                }
+                            }><span>Speed:</span></label>
+                            {this.state.speed}
+                        </div>
+                        
+                        <div className='speed-slider'>
+                            <label style = {
+                                {
+                                            fontSize: '14px', 
+                                            color: "turquoise", 
+                                            fontFamily: "cursive",
+                                            fontWeight: "bold",
+                                }
+                            }> Speed </label>
+                            <input id='Speedbar' type='range' 
+                            min='0' 
+                            max='100' 
+                            defaultValue={10}
+                            step={1} 
+                            onChange={(e) => this.onSpeed(e)} />
+                        </div>
+                        <div className='array-slider'>
+                            <label style = {
+                                { 
+                                            fontSize: '14px', 
+                                            color: "turquoise", 
+                                            fontFamily: "cursive",
+                                            fontWeight: "bold",
+                                }
+                            }> Array Size </label>
+                            <input id='Sizebar' type='range' 
+                            min='10' 
+                            max={200} 
+                            defaultValue={100}
+                            step={10} 
+                            onChange={(e) => this.onSlider(e)} />
+                        </div>
                     </div>
                 </div>
             </div>
