@@ -5,6 +5,7 @@ import { bubbleSort } from '../SortingAlgorithms/bubbleSort';
 import { quickSort } from '../SortingAlgorithms/quickSort';
 import { insertionSort } from '../SortingAlgorithms/insertionSort';
 import { selectionSort } from '../SortingAlgorithms/selectionSort';
+import Controls from '../components/Controls';
 
 
 export default class SortingVisualizer extends React.Component {
@@ -17,7 +18,7 @@ export default class SortingVisualizer extends React.Component {
             size: 100,
             width: 8,
         };
-    }
+    } 
 
     componentDidMount() {
         this.resetArray();
@@ -50,7 +51,7 @@ export default class SortingVisualizer extends React.Component {
 
                 const barOneStyle = arrayBars[barOneIdx].style;
                 const barTwoStyle = arrayBars[barTwoIdx].style;
-                const color = i % 3 === 0 ? 'pink' : 'red';
+                const color = i % 3 === 0 ? 'red' : 'pink';
                 setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
@@ -358,92 +359,18 @@ export default class SortingVisualizer extends React.Component {
                         </div>
                     ))}
                 </div>
-                <div className='bars'>
-                    <div className="buttons-bar">
-                        <button id='reArr' onClick={() => {
-                            this.resetArray();
-                        }}> Generate New Array </button>
-                        <button id='Merge' onClick={(e) => {
-                            this.disable();
-                            this.mergeSort();
-                            
-                        }}> Merge Sort </button>
-                        <button id='Quick' onClick={(e) => {
-                            this.disable();
-                            this.quickSort()
-                            
-                        }}> Quick Sort </button>
-                        <button id='Bubble' onClick={(e) => {
-                            this.disable();
-                            this.bubbleSort();
-                            
-                        }}> Bubble Sort </button>
-                        <button id='Insertion' onClick={(e) => {
-                            this.disable();
-                            this.insertionSort();
-                            
-                        }}> Insertion Sort </button>
-                        <button id='Selection' onClick={(e) => {
-                            this.disable();
-                            this.selectionSort();
-                            
-                        }}> Selection Sort </button>
-                        {/* <button onClick={() => this.testSortAlgos()}> Test Sort Algorithms </button>  */}
-                    </div>
-                    <div className='top-bar'>
-                        {this.state.algorithm}
-                        <div className='display'>
-                            <label style={
-                                {
-                                    fontFamily: "Arial",
-                                    color: "aqua",
-                                }
-                            }><span>Array Size:</span> </label>
-                            {this.state.size}
-                            <br></br>
-                            <label style={
-                                {
-                                    fontFamily: "Arial",
-                                    color: "aqua",
-                                }
-                            }><span>Speed:</span></label>
-                            {this.state.speed}
-                        </div>
-                        
-                        <div className='speed-slider'>
-                            <label style = {
-                                {
-                                            fontSize: '14px', 
-                                            color: "turquoise", 
-                                            fontFamily: "cursive",
-                                            fontWeight: "bold",
-                                }
-                            }> Speed </label>
-                            <input id='Speedbar' type='range' 
-                            min='0' 
-                            max='100' 
-                            defaultValue={10}
-                            step={1} 
-                            onChange={(e) => this.onSpeed(e)} />
-                        </div>
-                        <div className='array-slider'>
-                            <label style = {
-                                { 
-                                            fontSize: '14px', 
-                                            color: "turquoise", 
-                                            fontFamily: "cursive",
-                                            fontWeight: "bold",
-                                }
-                            }> Array Size </label>
-                            <input id='Sizebar' type='range' 
-                            min='10' 
-                            max={200} 
-                            defaultValue={100}
-                            step={10} 
-                            onChange={(e) => this.onSlider(e)} />
-                        </div>
-                    </div>
-                </div>
+                <Controls
+                    onReset={() => this.resetArray()}
+                    onMergeSort={() => this.mergeSort()}
+                    onQuickSort={() => this.quickSort()}
+                    onBubbleSort={() => this.bubbleSort()}
+                    onInsertionSort={() => this.insertionSort()}
+                    onSelectionSort={() => this.selectionSort()}
+                    onSpeedChange={(e) => this.onSpeed(e)}
+                    onSizeChange={(e) => this.onSlider(e)}
+                    size={this.state.size}
+                    speed={this.state.speed}
+                />
             </div>
         );
     }
